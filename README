@@ -1,0 +1,60 @@
+<Author : Parag Gupta>
+<Mail : paraggupta1993@gmail.com>
+----------------------------------------------------------
+Command Chat :
+
+Its a command-line based chat system, based on BSD sockets and POSIX threads coded in C++. Both source code and executable are included.
+
+1. Compilation on a linux machine using GCC compiler version 4.5.2 :
+(same commands may run for different versions as well )
+
+a. command to check GCC version 
+
+$ g++ -v
+
+
+b. Compile "server.cpp":
+
+$ g++ server.cpp -lpthread -o server 
+
+This should be run on one of the machines that want to talk. It will produce an executable called "server".
+
+b. Compile "client.cpp" :
+
+Open client.cpp in any text editor like 'vim'.
+Replace address "10.1.34.29" with the server's IP address ( IP address of the other machine you want to talk with )
+
+You can get the ip adress of a linux machine by : 
+
+$ ifconfig
+
+Save the file and then run the following command to compile it.
+
+$ g++ client.cpp -lpthread -o client
+
+This should be run on the other machine than the server. It will produce and executable called client.
+
+Now both machine are ready to run the executables and talk.
+
+Run server on one machine using :
+
+$ ./server
+
+Run client on other machine using :
+
+$ ./client
+
+By default both server and client will communicate via port 5000
+
+if you want to communicate over say port 'X' then do the following:
+
+$ ./server X
+
+Run client on other machine using :
+
+$ ./client X
+
+
+----------------------------------------------------------
+
+
